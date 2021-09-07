@@ -18,7 +18,7 @@ public class Menu {
             switch (opcion) {
                 case 1:
                     // insertar
-                    System.out.print("- Inserte Nombre:");
+                    System.out.println("- Inserte Nombre:");
                     String nombre = input.nextLine();
                     System.out.println("- Inserte Apellido:");
                     String apellido = input.nextLine();
