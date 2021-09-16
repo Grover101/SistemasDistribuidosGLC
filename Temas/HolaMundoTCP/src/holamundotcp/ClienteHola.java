@@ -16,21 +16,23 @@ import java.util.Scanner;
 
 /**
  *
- * @author Carlos
+ * @author Grover
  */
 public class ClienteHola {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("Introduzaca su nombre:");
-        String nombre = input.nextLine();
+        System.out.println("Introduzaca un numero:");
+        String numero = input.next();
+        System.out.println(numero);
         
         int port = 5002;
         try {
             Socket client = new Socket("localhost", port); 
             PrintStream toServer = new PrintStream(client.getOutputStream());
             BufferedReader fromServer = new BufferedReader(new InputStreamReader(client.getInputStream()));
-            toServer.println(nombre);
+//            toServer.print(numero);
+            toServer.println(numero);
             String result = fromServer.readLine();  
             System.out.println("cadena devuelta es: " + result);
 

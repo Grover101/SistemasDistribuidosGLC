@@ -14,7 +14,7 @@ import java.net.Socket;
 
 /**
  *
- * @author Carlos
+ * @author Grover
  */
 public class ServidorHola {
 
@@ -29,15 +29,25 @@ public class ServidorHola {
             client = server.accept(); //conexion
             BufferedReader fromClient = new BufferedReader(new InputStreamReader(client.getInputStream())); // el lector
             System.out.println("Cliente se conecto");
-            String delCliente = fromClient.readLine();
-            System.out.println(delCliente);
+           
+            
+            String nCliente = fromClient.readLine();
+            int fact = Integer.parseInt(nCliente);
+            System.out.println(fact);
+            
             toClient = new PrintStream(client.getOutputStream()); 
-            toClient.println("Hola Mundo " + delCliente);
+            toClient.println("El Factorial es: " + factorial(fact));
             System.out.println("Cliente se conecto");
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
-      
     }
+    
+     public static int factorial(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++)
+            fact *= i;
+        return fact;
+    }
+   
 }
