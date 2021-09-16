@@ -19,7 +19,7 @@ import java.net.Socket;
 public class ServidorHola {
 
     public static void main(String[] args) {
-        int port = 5002; 
+        int port = 5002;
         
         try {
             ServerSocket server = new ServerSocket(port);
@@ -29,9 +29,10 @@ public class ServidorHola {
             client = server.accept(); //conexion
             BufferedReader fromClient = new BufferedReader(new InputStreamReader(client.getInputStream())); // el lector
             System.out.println("Cliente se conecto");
-            System.out.println(fromClient.readLine());
+            String delCliente = fromClient.readLine();
+            System.out.println(delCliente);
             toClient = new PrintStream(client.getOutputStream()); 
-            toClient.println("Hola Mundo");
+            toClient.println("Hola Mundo " + delCliente);
             System.out.println("Cliente se conecto");
         } catch (IOException e) {
             System.out.println(e.getMessage());
