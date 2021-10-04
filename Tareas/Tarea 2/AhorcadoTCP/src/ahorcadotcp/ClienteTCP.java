@@ -13,7 +13,7 @@ public class ClienteTCP {
         int port = 5010;
         Scanner input = new Scanner(System.in);
         try {
-            String opcion, comenzar = "";
+            String opcion;
             char letra;
             boolean inicio = true;
 
@@ -22,58 +22,40 @@ public class ClienteTCP {
                 PrintStream toServer = new PrintStream(client.getOutputStream());
                 BufferedReader fromServer = new BufferedReader(new InputStreamReader(client.getInputStream()));
 
+                // Inicio del juego
                 if (inicio) {
                     System.out.println("Quiere comenzar? [S/N]");
                     opcion = input.next();
+                    // Comenzar el Juego
                     if (opcion.equals("S")) {
                         inicio = false;
-                        comenzar = "";
                         toServer.println(opcion);
                         String palabra = fromServer.readLine();
                         System.out.println("La palabra que le toco es de: " + palabra + " Letras");
-                        // System.out.println(co);
                     } else {
-                        System.out.println("Quiere Salir? [S/N]");
+                        // Opcion para salir del juego
+                        System.out.println("Quiere Salir? [F/N]");
                         opcion = input.next();
-                        if (opcion.equals("S"))
+                        if (opcion.equals("F")) {
+                            toServer.println("F");
                             break;
-                        else
+                        } else
                             System.out.println("Comience cuando este listo!!!!");
                     }
                 } else {
-                    // if (comenzar.isEmpty()) {
+                    // Envio de letras y recibo de respuestas
                     System.out.println("Ingrese una Letra:");
                     letra = input.next().charAt(0);
                     toServer.println(letra);
                     String response = fromServer.readLine();
-                    if (response.equals("gano")) {
-                        // System.out.println(response);
-                        // toServer.println(letra);
-                        System.out.println("Felicidades Ganaste!!!");
-                        // comenzar = "si";
+                    if (response.charAt(0) == 'F') {
+                        System.out.println(response);
                         inicio = true;
-                    } else if (response.equals("perdio")) {
-                        // System.out.println(response);
-                        System.out.println("Perdiste!!!");
-                        // comenzar = "si";
+                    } else if (response.charAt(0) == 'P') {
+                        System.out.println(response);
                         inicio = true;
-                        // toServer.println(letra);
                     } else
                         System.out.println(response);
-                    // } else {
-                    // System.out.println("Quiere volver a Jugar? [S/N]");
-                    // letra = input.next().charAt(0);
-                    // if (letra == 'S')
-                    // inicio = true;
-                    // else {
-                    // System.out.println("Gracias por Jugar!!!");
-                    // break;
-                    // }
-                    // }
-                    // cadena = sc.next();
-                    // String result = fromServer.readLine();
-                    // System.out.println("La palabra es:\n" + result);
-
                 }
                 client.close();
             } while (true);

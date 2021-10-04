@@ -21,53 +21,48 @@ public class ServidorTCP {
             Ahorcado ahorcado = new Ahorcado();
             String cadena = "";
             while (true) {
-                client = server.accept(); // conexion
-                BufferedReader fromClient = new BufferedReader(new InputStreamReader(client.getInputStream())); // el
-                toClient = new PrintStream(client.getOutputStream()); // lector
+                // conexion
+                client = server.accept();
+                BufferedReader fromClient = new BufferedReader(new InputStreamReader(client.getInputStream()));
+                toClient = new PrintStream(client.getOutputStream());
                 System.out.println("Cliente se conecto");
                 cadena = fromClient.readLine();
                 System.out.println(cadena);
 
-                if (cadena.equals("fin")) {
+                // Termina la ejecucuion del Servidor
+                if (cadena.equals("F")) {
                     System.out.println("SERVIDOR TERMINO LA EJECUCION");
                     break;
                 }
 
                 if (cadena.equals("S")) {
+                    // Instancia cada vez que vuelva a jugar para generar una palabra distinta
                     ahorcado = new Ahorcado();
                     toClient.println(ahorcado.getPalabra().length());
                 } else {
+                    // Verifica si la letra se encuentra o no
                     ahorcado.verificarLetra(cadena.charAt(0));
+
+                    // Da un formato legible al cliente
                     String palabraForm = "";
                     for (int i = 0; i < ahorcado.getPalabraFormada().length(); i++)
                         palabraForm += ahorcado.getPalabraFormada().charAt(i) + " ";
 
-                    // System.out.println(cad);
-                    // toClient.println(ahorcado.getPalabraFormada());
+                    // Envia el estado al cliente
                     if (ahorcado.getVida() > 0) {
                         if (ahorcado.gana())
-                            toClient.println("gano");
+                            toClient.println("Felicidades Ganaste!!! la palabra fue: " + ahorcado.getPalabra());
                         else
                             toClient.println(palabraForm + "\t" + "vidas: " + ahorcado.getVida());
                     } else
-                        toClient.println("perdio");
+                        toClient.println("Perdiste!!! la palabra fue: " + ahorcado.getPalabra());
 
                 }
-
-                // String otro = fromClient.readLine();
-                // System.out.println(otro);
                 System.out.println("Cliente se conecto");
             }
             server.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-    }
-
-    public static String Invertir(String cadena) {
-        String cadenaInvertida = "";
-        for (int i = cadena.length() - 1; i >= 0; i--)
-            cadenaInvertida += cadena.charAt(i);
-        return cadenaInvertida;
     }
 }
