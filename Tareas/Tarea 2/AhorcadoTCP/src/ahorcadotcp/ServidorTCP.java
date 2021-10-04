@@ -7,7 +7,6 @@ import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-
 public class ServidorTCP {
 
     public static void main(String[] args) {
@@ -19,25 +18,52 @@ public class ServidorTCP {
 
             Socket client;
             PrintStream toClient;
+            Ahorcado ahorcado = new Ahorcado();
+            String cadena = "";
             while (true) {
-                client = server.accept(); //conexion
-                BufferedReader fromClient = new BufferedReader(new InputStreamReader(client.getInputStream())); // el lector
+                client = server.accept(); // conexion
+                BufferedReader fromClient = new BufferedReader(new InputStreamReader(client.getInputStream())); // el
+                toClient = new PrintStream(client.getOutputStream()); // lector
                 System.out.println("Cliente se conecto");
-                String cadena = fromClient.readLine();
+                cadena = fromClient.readLine();
                 System.out.println(cadena);
+
                 if (cadena.equals("fin")) {
-                    System.err.println("SERVIDOR TERMINO LA EJECUCION");
+                    System.out.println("SERVIDOR TERMINO LA EJECUCION");
                     break;
                 }
-                toClient = new PrintStream(client.getOutputStream());
-                toClient.println(Invertir(cadena));
+
+                if (cadena.equals("S")) {
+                    ahorcado = new Ahorcado();
+                    toClient.println(ahorcado.getPalabra().length());
+                } else {
+                    ahorcado.verificarLetra(cadena.charAt(0));
+                    String palabraForm = "";
+                    for (int i = 0; i < ahorcado.getPalabraFormada().length(); i++)
+                        palabraForm += ahorcado.getPalabraFormada().charAt(i) + " ";
+
+                    // System.out.println(cad);
+                    // toClient.println(ahorcado.getPalabraFormada());
+                    if (ahorcado.getVida() > 0) {
+                        if (ahorcado.gana())
+                            toClient.println("gano");
+                        else
+                            toClient.println(palabraForm + "\t" + "vidas: " + ahorcado.getVida());
+                    } else
+                        toClient.println("perdio");
+
+                }
+
+                // String otro = fromClient.readLine();
+                // System.out.println(otro);
                 System.out.println("Cliente se conecto");
             }
+            server.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
-    
+
     public static String Invertir(String cadena) {
         String cadenaInvertida = "";
         for (int i = cadena.length() - 1; i >= 0; i--)
