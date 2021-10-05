@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ahoracadoudp;
 
 import java.net.*;
@@ -40,12 +35,9 @@ public class ClientUDP {
                         peticion = new DatagramPacket(mensaje, opcion.length(), hostServidor, puerto);
                         socketUDP.send(peticion);
 
-                        // toServer.println(opcion);
-
                         respuesta = new DatagramPacket(bufer, bufer.length);
                         socketUDP.receive(respuesta);
 
-                        // String palabra = fromServer.readLine();
                         String palabra = new String(respuesta.getData());
                         System.out.println("La palabra que le toco es de: " + palabra + " Letras");
                     } else {
@@ -65,14 +57,13 @@ public class ClientUDP {
                     // Envio de letras y recibo de respuestas
                     System.out.println("Ingrese una Letra:");
                     letra = input.next();
-                    // toServer.println(letra);
                     mensaje = letra.getBytes();
                     peticion = new DatagramPacket(mensaje, letra.length(), hostServidor, puerto);
                     socketUDP.send(peticion);
 
                     respuesta = new DatagramPacket(bufer, bufer.length);
                     socketUDP.receive(respuesta);
-                    // String response = fromServer.readLine();
+
                     String response = new String(respuesta.getData());
                     if (response.charAt(0) == 'F') {
                         System.out.println(response);
@@ -83,24 +74,6 @@ public class ClientUDP {
                     } else
                         System.out.println(response);
                 }
-
-                // System.out.println("Introduzaca un numero:");
-                // String dato = input.next();
-
-                // String dato = "Hola Mundo";
-
-                // Construimos un datagrama para enviar el mensaje al servidor
-                // peticion = new DatagramPacket(mensaje, dato.length(), hostServidor, puerto);
-
-                // Enviamos el datagrama
-
-                // Construimos el DatagramPacket que contendrá la respuesta
-
-                // Enviamos la respuesta del servidor a la salida estandar
-                // System.out.println("El Factorial de " + dato + ": " + new
-                // String(respuesta.getData()));
-
-                // Cerramos el socket
                 socketUDP.close();
             }
             input.close();
