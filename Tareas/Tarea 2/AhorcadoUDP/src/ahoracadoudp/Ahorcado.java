@@ -7,8 +7,8 @@ import java.util.Scanner;
  * @author grover
  */
 public class Ahorcado {
-    private String palabras[] = { "nabucodonosor", "anticostitucionalmente", "electrodomésticos", "ovovivíparo",
-            "omoplato", "sabiduría", "deuteronomio", "malaquías", "rigurosidad", "caleidoscopio" };
+    private String palabras[] = { "nabucodonosor", "anticostitucionalmente", "electrodomesticos", "ovoviviparo",
+            "omoplato", "sabiduria", "deuteronomio", "malaquias", "rigurosidad", "caleidoscopio" };
     private String palabra;
     private String palabraFormada = "";
     private int vida;
