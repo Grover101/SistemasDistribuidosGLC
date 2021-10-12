@@ -12,8 +12,7 @@ public class ClienteUniversidad {
 
     public static void main(String[] args) {
         IUniversidad universidad;
-        int a;
-        int b;
+        Diploma diploma = null;
         Scanner input = new Scanner(System.in);
         System.out.println("Ingrese los datos del Alumno para Emitir Diploma:");
         System.out.println("CI:");
@@ -31,8 +30,15 @@ public class ClienteUniversidad {
 
         try {
             universidad = (IUniversidad) Naming.lookup("rmi://localhost/Universidad");
-            Diploma c = universidad.emitirDiploma(ci, nombres, apellido1, apellido2, fechaNac, carrera);
-            System.out.print("Se emitio la diploma: " + c);
+            diploma = universidad.emitirDiploma(ci, nombres, apellido1, apellido2, fechaNac, carrera);
+
+            // diploma = universidad.emitirDiploma("1140504", "Walter Jhamil", "Segovia",
+            // "Arellano", "11-02-996", "Ing. en Ciencias de la Computacion");
+
+            if (diploma.getMensaje().isEmpty())
+                System.out.println("La diploma del Alumno se Emitio Correctamente");
+            else
+                System.out.println("Existen errores: " + diploma.getMensaje());
 
         } catch (NotBoundException ex) {
             Logger.getLogger(ClienteUniversidad.class.getName()).log(Level.SEVERE, null, ex);
@@ -41,7 +47,7 @@ public class ClienteUniversidad {
         } catch (RemoteException ex) {
             Logger.getLogger(ClienteUniversidad.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        // input.close();
     }
 
 }
