@@ -29,13 +29,11 @@ public class ServidorBanco extends UnicastRemoteObject implements IBanco
             Factura[] FactuPendinCessa = cessa.Facturaspendientes(idcliente);
             String[] pendinElapas = conectarElapas("fac-" + String.valueOf(idcliente)).split(",");
             Factura[] FactuPendinElapas = new Factura[pendinElapas.length];
-
+            
             int i = 0;
-            for (String f : pendinElapas) {
-                String[] factu = f.split("-");
-                int IdFactura = Integer.parseInt(factu[0]);
-                double monto = Integer.parseInt(factu[1]);
-                FactuPendinElapas[i] = new Factura("Elapas", IdFactura, monto);
+            for (String fac : pendinElapas) {
+                String[] factu = fac.split("-");
+                FactuPendinElapas[i] = new Factura("Elapas", Integer.parseInt(factu[0]), (double) Integer.parseInt(factu[1]));
                 i++;
             }
 
