@@ -29,7 +29,7 @@ public class ServidorElapas {
                 String cadenaClient;
                 cadenaClient = fromClient.readLine();
                 toClient = new PrintStream(client.getOutputStream());
-                System.out.println("Comando recibido: " + cadenaClient);
+                 System.out.println(cadenaClient);
                 if (cadenaClient.substring(3, 4).equals("-")) {
                     String instruccion = cadenaClient.substring(0, 3);
 

@@ -65,7 +65,7 @@ public class ServidorBanco extends UnicastRemoteObject implements IBanco
 
             }
 
-            factElapas = factElapas.substring(0, factElapas.length() - 3);
+            factElapas = factElapas.substring(0, factElapas.length() - 1);
 
             Factura[] FacturasCessa = new Factura[contarCessa];
 
