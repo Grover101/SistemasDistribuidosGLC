@@ -8,6 +8,7 @@ import java.util.Scanner;
  * @author grover
  */
 public class ClienteBanco {
+
     public static void main(String args[]) {
         IBanco banco;
         int idcliente;
@@ -20,17 +21,16 @@ public class ClienteBanco {
             System.out.println("\tFacturas Pendientes");
             Factura[] pend = banco.calcular(idcliente);
             for (Factura f : pend) {
-                System.out.print(f.getEmpresa() + "   ");
-                System.out.print(f.getIdFactura() + "   ");
-                System.out.println(f.getMonto());
+                System.out.println(f.getEmpresa() + "   " + f.getIdFactura() + "   " + f.getMonto());
             }
             System.out.println("Desea Pagar las Facturas: [S/N]");
             String pagar = input.next();
             if (pagar.charAt(0) == 'S') {
                 pago = banco.pagar(pend);
                 System.out.println("Se realizo los siguientes pagos:\n" + pago);
-            } else
+            } else {
                 System.out.println("Pague sus deudas");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
