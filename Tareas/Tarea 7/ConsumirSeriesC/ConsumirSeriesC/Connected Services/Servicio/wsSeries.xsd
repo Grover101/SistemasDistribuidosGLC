@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://servicios/" targetNamespace="http://servicios/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Factorial" type="tns:Factorial" />
+  <xs:element name="FactorialResponse" type="tns:FactorialResponse" />
+  <xs:element name="Fibonacci" type="tns:Fibonacci" />
+  <xs:element name="FibonacciResponse" type="tns:FibonacciResponse" />
+  <xs:complexType name="Factorial">
+    <xs:sequence>
+      <xs:element name="n" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FactorialResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Fibonacci">
+    <xs:sequence>
+      <xs:element name="n" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FibonacciResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
