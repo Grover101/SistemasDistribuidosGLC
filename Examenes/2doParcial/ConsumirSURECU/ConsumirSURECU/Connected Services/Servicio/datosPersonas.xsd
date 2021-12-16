@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://servicios/" targetNamespace="http://servicios/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ObtenerCertificadoDefuncion" type="tns:ObtenerCertificadoDefuncion" />
+  <xs:element name="ObtenerCertificadoDefuncionResponse" type="tns:ObtenerCertificadoDefuncionResponse" />
+  <xs:element name="ObtenerCertificadoMatrimonio" type="tns:ObtenerCertificadoMatrimonio" />
+  <xs:element name="ObtenerCertificadoMatrimonioResponse" type="tns:ObtenerCertificadoMatrimonioResponse" />
+  <xs:element name="ObtenerCertificadoNacimiento" type="tns:ObtenerCertificadoNacimiento" />
+  <xs:element name="ObtenerCertificadoNacimientoResponse" type="tns:ObtenerCertificadoNacimientoResponse" />
+  <xs:element name="ObtenerDatos" type="tns:ObtenerDatos" />
+  <xs:element name="ObtenerDatosResponse" type="tns:ObtenerDatosResponse" />
+  <xs:complexType name="ObtenerCertificadoMatrimonio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ci" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerCertificadoMatrimonioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ci" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerDatosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerCertificadoDefuncion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ci" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerCertificadoDefuncionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerCertificadoNacimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ci" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerCertificadoNacimientoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

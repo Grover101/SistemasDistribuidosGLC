@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://servicios/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="datosPersonas" targetNamespace="http://servicios/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/SURECU/datosPersonas?xsd=1" namespace="http://servicios/" />
+    </xsd:schema>
+  </types>
+  <message name="ObtenerDatos">
+    <part name="parameters" element="tns:ObtenerDatos" />
+  </message>
+  <message name="ObtenerDatosResponse">
+    <part name="parameters" element="tns:ObtenerDatosResponse" />
+  </message>
+  <message name="ObtenerCertificadoMatrimonio">
+    <part name="parameters" element="tns:ObtenerCertificadoMatrimonio" />
+  </message>
+  <message name="ObtenerCertificadoMatrimonioResponse">
+    <part name="parameters" element="tns:ObtenerCertificadoMatrimonioResponse" />
+  </message>
+  <message name="ObtenerCertificadoDefuncion">
+    <part name="parameters" element="tns:ObtenerCertificadoDefuncion" />
+  </message>
+  <message name="ObtenerCertificadoDefuncionResponse">
+    <part name="parameters" element="tns:ObtenerCertificadoDefuncionResponse" />
+  </message>
+  <message name="ObtenerCertificadoNacimiento">
+    <part name="parameters" element="tns:ObtenerCertificadoNacimiento" />
+  </message>
+  <message name="ObtenerCertificadoNacimientoResponse">
+    <part name="parameters" element="tns:ObtenerCertificadoNacimientoResponse" />
+  </message>
+  <portType name="datosPersonas">
+    <operation name="ObtenerDatos">
+      <input wsam:Action="http://servicios/datosPersonas/ObtenerDatosRequest" message="tns:ObtenerDatos" />
+      <output wsam:Action="http://servicios/datosPersonas/ObtenerDatosResponse" message="tns:ObtenerDatosResponse" />
+    </operation>
+    <operation name="ObtenerCertificadoMatrimonio">
+      <input wsam:Action="http://servicios/datosPersonas/ObtenerCertificadoMatrimonioRequest" message="tns:ObtenerCertificadoMatrimonio" />
+      <output wsam:Action="http://servicios/datosPersonas/ObtenerCertificadoMatrimonioResponse" message="tns:ObtenerCertificadoMatrimonioResponse" />
+    </operation>
+    <operation name="ObtenerCertificadoDefuncion">
+      <input wsam:Action="http://servicios/datosPersonas/ObtenerCertificadoDefuncionRequest" message="tns:ObtenerCertificadoDefuncion" />
+      <output wsam:Action="http://servicios/datosPersonas/ObtenerCertificadoDefuncionResponse" message="tns:ObtenerCertificadoDefuncionResponse" />
+    </operation>
+    <operation name="ObtenerCertificadoNacimiento">
+      <input wsam:Action="http://servicios/datosPersonas/ObtenerCertificadoNacimientoRequest" message="tns:ObtenerCertificadoNacimiento" />
+      <output wsam:Action="http://servicios/datosPersonas/ObtenerCertificadoNacimientoResponse" message="tns:ObtenerCertificadoNacimientoResponse" />
+    </operation>
+  </portType>
+  <binding name="datosPersonasPortBinding" type="tns:datosPersonas">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ObtenerDatos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerCertificadoMatrimonio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerCertificadoDefuncion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerCertificadoNacimiento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="datosPersonas">
+    <port name="datosPersonasPort" binding="tns:datosPersonasPortBinding">
+      <soap:address location="http://localhost:8080/SURECU/datosPersonas" />
+    </port>
+  </service>
+</definitions>
