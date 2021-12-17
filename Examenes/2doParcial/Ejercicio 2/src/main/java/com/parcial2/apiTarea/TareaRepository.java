@@ -24,21 +24,5 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 public interface TareaRepository extends JpaRepository<Tarea, Long> {
-
-    // public void updateArticle(Long id, Map<String, Object> request)
-    // {
-    // ArticleEntity articleEntity = articleRepository.findById(id).orElseThrow(()
-    // -> {
-    // throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Id not found.");
-    // });
-
-    // request.forEach((k,v) -> {
-
-    // Field field = ReflectionUtils.findField(ArticleEntity.class, k);
-    // field.setAccessible(true);
-    // ReflectionUtils.setField(field, articleEntity, v);
-
-    // });
-    // articleRepository.save(articleEntity);
-    // }
+    Tarea findById(Long id);
 }
