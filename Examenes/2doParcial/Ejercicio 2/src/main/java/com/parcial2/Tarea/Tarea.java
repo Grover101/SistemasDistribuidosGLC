@@ -1,14 +1,13 @@
-package com.parcial2.apiTarea;
+package com.parcial2.Tarea;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
 public class Tarea {
-//id,titulo,descripcion,fechainicio,fechafinal, estado solo
+    // id,titulo,descripcion,fechainicio,fechafinal, estado solo
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -17,7 +16,6 @@ public class Tarea {
     private String fechainicio;
     private String fechafinal;
     private int estado;
-
 
     public Long getId() {
         return id;

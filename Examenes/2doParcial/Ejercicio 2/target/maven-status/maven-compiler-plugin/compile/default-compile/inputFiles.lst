@@ -1,14 +1,14 @@
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\repository\UserRepository.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\model\Authority.java
-D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\apiTarea\TareaService.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\service\JwtAuthenticationResponse.java
+D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\Tarea\TareaService.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\model\AuthorityName.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\JwtAuthenticationRequest.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\admin\AdminRestController.java
-D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\apiTarea\TareaRestController.java
+D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\Tarea\Tarea.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\controller\UserRestController.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\JwtAuthenticationEntryPoint.java
-D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\apiTarea\TareaRepository.java
+D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\Tarea\TareaRestController.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\JwtAuthenticationTokenFilter.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\JwtUserFactory.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\parcial2Application.java
@@ -18,4 +18,4 @@ D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\model\User.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\config\WebSecurityConfig.java
 D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\security\service\JwtUserDetailsServiceImpl.java
-D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\apiTarea\Tarea.java
+D:\6to Semestre\SistemasDistribuidosGLC\Examenes\2doParcial\Ejercicio 2\src\main\java\com\parcial2\Tarea\TareaRepository.java
