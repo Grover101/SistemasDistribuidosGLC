@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BibliotecaApplication<bookmarks>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.biblioteca.BibliotecaApplication",
+            "projectName": "bookmarks",
+            "args": ""
+        }
+    ]
+}
