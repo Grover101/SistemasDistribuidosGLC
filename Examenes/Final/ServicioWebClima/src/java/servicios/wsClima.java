@@ -36,6 +36,6 @@ public class wsClima {
         }else if("12-02-22".equals(b)){
             return "t".equals(a) ? "Temperatura: 18º" :"Probabilidad de Lluvia: 0.65%";
         }
-        return null;
+        return "No existe";
     }
 }
