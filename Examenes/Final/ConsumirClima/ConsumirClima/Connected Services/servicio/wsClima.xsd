@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://servicios/" targetNamespace="http://servicios/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Temperatura" type="tns:Temperatura" />
+  <xs:element name="TemperaturaResponse" type="tns:TemperaturaResponse" />
+  <xs:complexType name="Temperatura">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="formato" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TemperaturaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
