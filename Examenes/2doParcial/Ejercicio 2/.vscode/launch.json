@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-parcial2Application<bookmarks>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.parcial2.parcial2Application",
+            "projectName": "bookmarks",
+            "args": ""
+        }
+    ]
+}
